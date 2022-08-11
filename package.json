@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "tutorial for app on creating public and private stories",
   "main": "app.js",
-  "scripts": { 
+  "scripts": {
     "start": "cross-env NODE_ENV=production node app",
-    "dev": "cross-env NODE_ENV=development nodemon app",
+    "dev": "cross-env NODE_ENV=development nodemon app"
   },
   "author": "Tutorial",
   "license": "ISC",
   "dependencies": {
     "connect": "^3.7.0",
+    "connect-mongo": "^4.6.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
