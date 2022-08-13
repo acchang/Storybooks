@@ -4,7 +4,11 @@ const router = express.Router()
 // @desc    Login/Landing page
 // @route   GET / 
 router.get('/', (req, res) => {
+<<<<<<< HEAD
     res.render('login',{
+=======
+    res.render('login', {
+>>>>>>> old-state
         layout: 'login',
     })
 })

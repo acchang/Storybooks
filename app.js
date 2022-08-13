@@ -19,12 +19,10 @@ if (process.env.NODE_ENV === 'development'){
 
 // Handlebars
 app.engine('.hbs', exphbs.engine({extname: '.hbs', defaultLayout: 'main'}));
-app.set('view engine', '.hbs');
-// app.set('views', './views');
+app.set('view engine', '.hbs'); // app.set('views', './views');
 
-// Static folder
-app.use(express.static(path.join(__dirname, 'public ')))
-
+//Static folder
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 app.use('/', require('./routes/index'))
