@@ -16,7 +16,6 @@ module.exports = function(app, passport) {
     require('./config/passport')(passport)
 }
 
-
 connectDB()
 
 const app = express()
