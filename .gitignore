@@ -1,3 +1,5 @@
 .env
 node_modules
 config/
+!config/passport.js
+!config/db.js
