@@ -4,6 +4,7 @@ const { ensureAuth, ensureGuest } = require('../views/middleware/auth')
 
 const Story = require('../models/Story')
 
+
 // @desc    Login/Landing page
 // @route   GET / 
 router.get('/', ensureGuest, (req, res) => {
@@ -26,6 +27,5 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
         res.render('error/')
     }
 })
-
 
 module.exports = router
