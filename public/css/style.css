@@ -2,12 +2,12 @@ body {
     background: green;
 }
 
-/* p {
-    margin: 10px 0 !important
+p {
+    margin: 10px 0 !important;
 }
 
 .login-container{
     width: 500px;
     margin-top: 50px;
     text-align: center;
-} */
+}
