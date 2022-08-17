@@ -41,9 +41,9 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    store: MongoStore.create ({
-        mongoUrl: process.env.MONGO_URI,
-    })
+    // store: MongoStore.create ({
+    //     mongoUrl: process.env.MONGO_URI,
+    // })
 }))
 
 // Passport middleware

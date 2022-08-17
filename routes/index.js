@@ -16,6 +16,7 @@ router.get('/', ensureGuest, (req, res) => {
 // @desc    Dashboard
 // @route   GET /dashboard
 router.get('/dashboard', ensureAuth, async (req, res) => {
+    console.log("use object in /dashboard:", req.user);
     try {
         const stories = await Story.find({user: req.user.id}).lean()
         res.render('dashboard', {
