@@ -29,6 +29,7 @@ router.get('/', ensureGuest, (req, res) => {
 // })
 
 router.get('/dashboard', ensureAuth, async (req, res) => {
+    console.log(req.user)
     res.render('dashboard', {name:req.user.firstName})
 })
 
