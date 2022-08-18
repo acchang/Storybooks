@@ -1,6 +1,7 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy
 const mongoose = require('mongoose')
 const User = require('../models/User')
+const {ObjectID} = require('mongodb')
 
 module.exports = function(passport) {
     passport.use(new GoogleStrategy({
@@ -34,19 +35,15 @@ module.exports = function(passport) {
     )
   )
 
-    passport.serializeUser(function(user, cb) {
-        process.nextTick(function() {
-          return cb(null, {
-            id: user.id,
-            username: user.username,
-            picture: user.picture
-          });
-        });
-      });
-      
-      passport.deserializeUser(function(user, cb) {
-        process.nextTick(function() {
-          return cb(null, user);
-        });
-      });
-    }
+  passport.deserializeUser(function (id, done) {
+    User.findOne({ _id: ObjectID(id)  }, function (err,user) {
+      done(err,user)
+    })
+  });
+
+  // user object -> id
+  passport.serializeUser(function(user, cb) {
+    return cb(null, user.id);
+  });
+
+  }
